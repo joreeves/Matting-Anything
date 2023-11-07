@@ -15,7 +15,7 @@ from   trainer import Trainer
 from   dataloader.image_file import ImageFileTrain
 from   dataloader.data_generator import DataGenerator
 from   dataloader.prefetcher import Prefetcher
-import wandb
+# import wandb
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -35,8 +35,8 @@ def main():
             utils.make_dir(CONFIG.log.logging_path)
             utils.make_dir(CONFIG.log.tensorboard_path)
             utils.make_dir(CONFIG.log.checkpoint_path)
-            if CONFIG.wandb:
-                wandb.init(project="mam", config=CONFIG, name=CONFIG.version)
+            # if CONFIG.wandb:
+            #     wandb.init(project="mam", config=CONFIG, name=CONFIG.version)
     
         # Create a logger
         logger, tb_logger = utils.get_logger(CONFIG.log.logging_path,

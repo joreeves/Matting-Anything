@@ -13,13 +13,17 @@ import utils
 from   utils import CONFIG
 import networks
 from tqdm import tqdm
-from fvcore.nn import FlopCountAnalysis
+# from fvcore.nn import FlopCountAnalysis
 import sys
 
 sys.path.insert(0, './segment-anything')
 sys.path.insert(0, './GroundingDINO')
 from segment_anything.utils.transforms import ResizeLongestSide
-from groundingdino.util.inference import Model
+
+try:
+    from groundingdino.util.inference import Model
+except:
+    pass
 
 transform = ResizeLongestSide(1024)
 
